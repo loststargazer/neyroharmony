@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на прием | Нейро-Гармония</title>
+    <style>
+        /* Общие стили как в index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: #5d69b3;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav li {
+            margin-left: 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        
+        nav a:hover {
+            background-color: #4a5499;
+        }
+        
+        .hero {
+            background-color: #8e94c0;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        textarea {
+            height: 120px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #5d69b3;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #4a5499;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            width: 23%;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3a4a5f;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-column {
+                width: 48%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-column {
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Нейро-Гармония</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="appointment.html">Запись</a></li>
+                    <li><a href="testimonials.html">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Запись на прием</h1>
+            <p>Выберите специалиста и удобное время</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title">Форма записи</h2>
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="fullname">ФИО *</label>
+                        <input type="text" id="fullname" required placeholder="Иванов Иван Иванович">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" required placeholder="+7 (900) 123-45-67">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctor">Специалист *</label>
+                        <select id="doctor" required>
+                            <option value="">Выберите врача</option>
+                            <option value="psychiatrist">Психиатр</option>
+                            <option value="psychotherapist">Психотерапевт</option>
+                            <option value="narcologist">Психиатр-нарколог</option>
+                            <option value="child">Детский психиатр</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Желаемая дата *</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Желаемое время *</label>
+                        <select id="time" required>
+                            <option value="">Выберите время</option>
+                            <option value="9-11">9:00 - 11:00</option>
+                            <option value="11-13">11:00 - 13:00</option>
+                            <option value="13-15">13:00 - 15:00</option>
+                            <option value="15-17">15:00 - 17:00</option>
+                            <option value="17-19">17:00 - 19:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reason">Причина обращения</label>
+                        <textarea id="reason" placeholder="Опишите кратко вашу проблему"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">Я согласен с политикой конфиденциальности</label>
+                    </div>
+                    
+                    <button type="submit" class="btn">Записаться на прием</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Клиника "Нейро-Гармония"</h3>
+                    <p>Современная психиатрическая клиника</p>
+                </div>
+                <div class="footer-column">
+                   
+                </div>
+                <div class="footer-column">
+               
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>г. Воронеж, ул. Психотерапевтическая, 23<br>
+                    +7 (***) ***-**-**<br>
+                    info@neuro-harmony.ru</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Клиника "Нейро-Гармония"</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Установка минимальной даты (завтра)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('date').min = tomorrow.toISOString().split('T')[0];
+        
+        // Обработка формы
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Ваша заявка принята! Мы свяжемся с вами для подтверждения записи.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
